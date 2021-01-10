@@ -4,43 +4,36 @@ layout: page
 ---
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
-<p>Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Researcher at [Deep Text Lab](http://deeptext.yonsei.ac.kr/).</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h2>Education</h2>
 
-<h2>Skills</h2>
-
-<ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Testes)</li>
-	<li>NodeJS</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
-	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
+<ul class="education-list">
+	<li>M.S. in Digital Analytics, Yonsei University (Mar. 2020 ~ Present)</li>
+	<li>Bachelor of Sociology, Yonsei University (Mar. 2014 ~ Feb 2020) </li>
 </ul>
 
 <h2>Projects</h2>
 
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
+<ul class="project-list">
+	<li>2020 빅콘테스트 챔피언리그 최우수상(NS SHOP+ 판매실적 예측을 통한 편성 최적화 방안 도출)</li>
+	<li>jtbc 스튜디오 드라마하우스 Data Management System 구축 (Oct. 2020 ~ Mar. 2021)</li>
+	<li>현대자동차 차량 음악 추천 메뉴 제공을 위한 데이터 분석 프로젝트(Apr. 2020 ~ Jan 2021)</li>
 </ul>
+
+<h2>Skills</h2>
+
+<ul class="skill-list">
+	<li>Programming Language : Python</li>
+	<li>Data : keras, Pytorch, SQL</li>
+	<li>Web : Django</li>
+</ul>
+
+<h2>Interests</h2>
+
+<ul class="interest-list">
+	<li>recommendation system</li>
+	<li>NLP</li>
+	<li>text mining</li>
+</ul>
+

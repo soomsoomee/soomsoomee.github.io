@@ -2,8 +2,8 @@
 title: "[Pop Your Filter Bubble] 1. MIND(A Large-scale Dataset for news recommendation) 살펴보기"
 layout: post
 date: 2020-01-10 
-tag: filter-bubble
-image: ../assets/images/project/filter_bubble/bubble.jpeg
+tag: filter bubble
+image: ../assets/images/project/filter_bubble/filterbubble.png
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination

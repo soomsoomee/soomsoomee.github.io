@@ -15,3 +15,5 @@ externalLink: false
 
 'Pop Your Filter Bubble' 프로젝트의 첫 번째 과제는 데이터 구하기이다. 
 프로젝트의 목적
+
+![Screenshot](https://raw.githubusercontent.com/sergiokopplin/indigo/gh-pages/assets/screen-shot.png)

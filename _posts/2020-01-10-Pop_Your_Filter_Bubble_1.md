@@ -3,7 +3,7 @@ title: "[Pop Your Filter Bubble] 1. MIND(A Large-scale Dataset for news recommen
 layout: post
 date: 2020-01-10 
 tag: filter-bubble
-image: https://sergiokopplin.github.io/indigo/assets/images/jekyll-logo-light-solid.png
+image: https://github.com/soomsoomee/soomsoomee.github.io/blob/gh-pages/assets/images/james.jpg
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination

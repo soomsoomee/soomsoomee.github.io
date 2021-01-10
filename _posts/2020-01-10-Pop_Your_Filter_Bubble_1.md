@@ -14,6 +14,6 @@ externalLink: false
 ---
 
 'Pop Your Filter Bubble' 프로젝트의 첫 번째 과제는 데이터 구하기이다. 
-프로젝트의 목적
+프로젝트의 목적 왜 사진이 안 올라갈까?
 
 ![Screenshot](https://github.com/soomsoomee/soomsoomee.github.io/blob/gh-pages/assets/images/profile.jpg)

@@ -4,7 +4,7 @@ layout: page
 ---
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
-<p>Researcher at [Deep Text Lab](http://deeptext.yonsei.ac.kr/).</p>
+<p>Researcher at ![Deep Text Lab](http://deeptext.yonsei.ac.kr/).</p>
 
 <h2>Education</h2>
 

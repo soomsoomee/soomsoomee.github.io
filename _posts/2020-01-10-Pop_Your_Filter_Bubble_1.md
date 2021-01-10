@@ -3,7 +3,7 @@ title: "[Pop Your Filter Bubble] 1. MIND(A Large-scale Dataset for news recommen
 layout: post
 date: 2016-01-23 22:10
 tag: filter-bubble
-image: https://soomsoomee.github.io/assets/images/project/filter_bubble/mind.png
+image: https://soomsoomee.github.io/indigo/assets/images/project/filter_bubble/mind.png
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination

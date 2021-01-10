@@ -3,7 +3,7 @@ title: "[Pop Your Filter Bubble] 1. MIND(A Large-scale Dataset for news recommen
 layout: post
 date: 2020-01-10 
 tag: filter-bubble
-image: ../assets/images/james.jpg
+image: ../assets/images/project/filter_bubble/bubble.jpeg
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
@@ -14,6 +14,4 @@ externalLink: false
 ---
 
 'Pop Your Filter Bubble' 프로젝트의 첫 번째 과제는 데이터 구하기이다. 
-왜 사진이 안 올라갈까?
 
-![Screenshot](../assets/images/profile.jpg)

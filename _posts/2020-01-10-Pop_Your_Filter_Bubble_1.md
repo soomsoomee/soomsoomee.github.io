@@ -38,7 +38,8 @@ News recommendation is an important technique for personalized news service. Com
 * Microsoft News의 기사와 유저 로그를 포함한 데이터
 * 100만 유저의 클릭 행동과 160,000개의 기사를 포함
 
-<br/>
+<br/> 
+
 **Ⅱ.  Related Work**    
 1. News Recommendation
 

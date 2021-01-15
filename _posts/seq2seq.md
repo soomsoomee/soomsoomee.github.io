@@ -1,0 +1,23 @@
+---
+title: "[김기현의 딥러닝을 활용한 자연어생성] seq2seq 구조"
+layout: post
+date: 2020-01-15
+image: ../assets/images/markdown.jpg
+headerImage: false
+tag:
+- seq2seq
+category: blog
+author: soom
+description: 김기현의 딥러닝을 활용한 자연어생성 - seq2seq 수식 및 구조 복습
+---
+
+[김기현의 딥러닝을 활용한 자연어 생성](https://www.fastcampus.co.kr/data_online_dpnlg) 수업을 듣고 seq2seq을 사용한 번역기 구조를 복습해보았다.
+
+![seq2seq(1)](/assets/images/seq2seq복습/seq2seq(1).jpg)
+![seq2seq(2)](/assets/images/seq2seq복습/seq2seq(2).jpg)
+![seq2seq(3)](/assets/images/seq2seq복습/seq2seq(3).jpg)
+![seq2seq(4)](/assets/images/seq2seq복습/seq2seq(4).jpg)
+![seq2seq(5)](/assets/images/seq2seq복습/seq2seq(5).jpg)
+![seq2seq(6)](/assets/images/seq2seq복습/seq2seq(6).jpg)
+![seq2seq(7)](/assets/images/seq2seq복습/seq2seq(7).jpg)
+

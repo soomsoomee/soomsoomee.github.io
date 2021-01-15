@@ -40,7 +40,6 @@ News recommendation is an important technique for personalized news service. Com
     
  * 주로 명시적인 평점이 없고 클릭과 같은 암묵적인(implicit) 정보를 통해 유저의 선호가 표현된다. 
 
-<br/>
     
 #### 2. MIND 데이터  
  

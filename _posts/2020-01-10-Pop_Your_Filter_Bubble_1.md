@@ -35,16 +35,13 @@ News recommendation is an important technique for personalized news service. Com
 #### 1. 뉴스(news) 추천의 특징  
 
  * 뉴스 기사는 업데이트 속도가 매우 빠르다. cold-start problem이 특히 문제될 수 있음  
-    
  * 뉴스 기사는 텍스트적 정보(제목, 본문)을 풍부하게 포함한다. 기본적인 CF(Collaborative Filtering)처럼 유저, 아이템을 단순히 아이디로 포함하는 것보다 다양한 정보를 포함할 필요가 있다.
-    
  * 주로 명시적인 평점이 없고 클릭과 같은 암묵적인(implicit) 정보를 통해 유저의 선호가 표현된다. 
 
     
 #### 2. MIND 데이터  
  
  * Microsoft News의 기사와 유저 로그를 포함한 데이터
-    
  * 100만 유저의 클릭 행동과 160,000개의 기사를 포함
 
 <br/>

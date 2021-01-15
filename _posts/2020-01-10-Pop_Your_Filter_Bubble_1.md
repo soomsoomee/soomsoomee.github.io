@@ -18,12 +18,16 @@ externalLink: false
 추천 알고리즘의 발달로 우리는 점점 내가 좋아하는 것, 내가 익숙한 것에 쉽게 노출된다. 이것이 새로운 경험을 저해하는 장애물이 되는 것은 아닐까? 특히 '관점'을 담는 뉴스 기사에 추천 알고리즘을 적용하는 경우, 사용자들은 큰 그림을 보지 못하고 자기가 보고 싶은 것만 보는 '확증편향'에 빠지기 쉽다. 추천시스템을 역이용하여 나와 생각이 다른 기사를 함께 추천해주는 것은 어떨까?  
 
 <br/><br/>
-'Pop Your Filter Bubble' 프로젝트의 첫 번째 과제는 데이터 구하기이다. 대부분의 추천 서비스가 협업필터링(Collaborative Filtering)과 컨텐츠 기반 추천(Contents-based recommendation)을 섞은 하이브리드 추천시스템을 사용하고 있다. 따라서 이를 역이용하기 위해서는 협업필터링과 관련한 사용자 로그 데이터와 컨텐츠 기반 추천과 관련한 기사 데이터가 필요하다. Microsoft News에서 뉴스 기사 추천시스템을 위한 데이터([MIND: A Large-scale Dataset for News Recommendation](https://paperswithcode.com/paper/mind-a-large-scale-dataset-for-news))를 제공하고 있어, 이를 사용하기로 했다. 또한 MIND 데이터셋을 설명한 논문을 정리해보았다.
+'Pop Your Filter Bubble' 프로젝트의 첫 번째 과제는 데이터 구하기이다. 대부분의 추천 서비스가 협업필터링(Collaborative Filtering)과 컨텐츠 기반 추천(Contents-based recommendation)을 섞은 하이브리드 추천시스템을 사용하고 있다. 따라서 이를 역이용하기 위해서는 협업필터링과 관련한 사용자 로그 데이터와 컨텐츠 기반 추천과 관련한 기사 데이터가 필요하다. Microsoft News에서 뉴스 기사 추천시스템을 위한 데이터([MIND: A Large-scale Dataset for News Recommendation](https://paperswithcode.com/paper/mind-a-large-scale-dataset-for-news))를 제공하고 있어, 이를 사용하기로 했다. 또한 MIND 데이터셋을 설명한 논문을 정리해보았다.  
 
+---
 
+<br/>
 
-> **'MIND: A Large-scale Dataset for News Recommendation' Abastract**  
+> **'MIND: A Large-scale Dataset for News Recommendation' Abstract**  
 News recommendation is an important technique for personalized news service. Compared with product and movie recommendations which have been comprehensively studied, the research on news recommendation is much more limited, mainly due to the lack of a high-quality benchmark dataset. In this paper, we present a large-scale dataset named MIND for news recommendation. Constructed from the user click logs of Microsoft News, MIND contains 1 million users and more than 160k English news articles, each of which has rich textual content such as title, abstract and body. We demonstrate MIND a good testbed for news recommendation through a comparative study of several state-of-the-art news recommendation methods which are originally developed on different proprietary datasets. Our results show the performance of news recommendation highly relies on the quality of news content understanding and user interest modeling. Many natural language processing techniques such as effective text representation methods and pre-trained language models can effectively improve the performance of news recommendation. The MIND dataset will be available at https://msnews.github.io  
+
+<br/>
 
 Ⅰ. Introduction  
 1.  뉴스(news) 추천의 특징

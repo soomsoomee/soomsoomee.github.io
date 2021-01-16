@@ -41,13 +41,17 @@ dataset.
 * ideological bias를 찾아내는 것은, 사람에게도 쉽지 않은 일이다. 정치적 지식도 있어야 하고, 글의 맥락을 읽을 수 있는 능력도 필요하다.
 * **이 논문에서는 sentence 수준 뿐 아니라, phrase 수준에서도 라벨링 한 새로운 데이터 셋을 사용하였다.**
 ![인트로 예시](../assets/images/project/filter_bubble/ideology_인트로예시.PNG)
-<figcaption class="caption">'death tax'(상속세), 'small business'를 단어 수준에서 보면 conservative에서 주로 쓰는 언어지만, 상위 노드로 올라가면서 문장 전체는 liberal 입장이 된다.</figcaption>
+<figcaption class="caption">'death tax'(상속세), 'small business'를 단어 수준에서 보면 conservative에서 주로 쓰는 언어지만, 상위 노드로 올라가면서 "", 'big lie about'과 만나며 문장 전체는 liberal 입장이 된다.</figcaption>
 
 <br/>
 
 ## II. Recursive Neural Networks
 ### 2.1 Model Description
-* RNN 인풋을 문장 순서대로 넣는 것이 아니라, 단어 레벨부터 문장 전체까지 트리 구조로 쌓아서, 말단 노드부터 최상위 노드까지 입력하는 방식
+* RNN 인풋을 문장 순서대로 넣는 것이 아니라, 단어 레벨부터 문장 전체까지 트리 구조로 쌓아서, 말단 노드부터 최상위 노드까지 입력하는 방식  
+![RNN구조](../assets/images/project/filter_bubble/ideology_RNN.PNG)  
+![RNN수식](../assets/images/project/filter_bubble/ideology_RNN_수식.PNG)
+<figcaption class="caption">하위 노드 left, right의 값을 넣어서 상위 노드의 값을 출력한다.</figcaption>
+
 
 ### 2.2 Initialization
 * 초기 단어 인풋 벡터를 어떻게 설정할 것인가? 
@@ -70,10 +74,13 @@ dataset.
     
 * 정치적 문장이 걸러졌다면, liberal인지 conservative인지 라벨링해야 한다. Crowdflower라는 크라우드 소싱 플랫폼을 사용하여 라벨링하였다. 
     * 2명 이상이 같은 대답을 한 경우에만 valid한 데이터로 사용
-    * root 노드의 경우 응답자 라벨링으로 valid하게 통과된 것만 남기고, 라벨링 되지 않은 leaf 노드는 가장 가까운 root 노드의 라벨링을 따름(모든 노드가 라벨링 되도록 함)
+    * root 노드의 경우 응답자 라벨링으로 valid하게 통과된 것만 남기고, 라벨링 되지 않은 leaf 노드는 가장 가까운 root 노드의 라벨링을 따름(모든 노드가 라벨링 되도록 함)  
+    ![라벨링](../assets/images/project/filter_bubble/ideology_라벨링.PNG)
+    <figcaption class="caption">문장을 노드 단위로 쪼개서 라벨링 진행</figcaption>
     
 * 라벨링 결과 하위 노드에서의 정치적 성향과 상위 레벨에서의 정치적 성향이 달라진 경우가 543건(전체 13,640건) 존재했다.
 * 하위 노드의 정치적 성향은 대부분 neutral이었고, 상위 레벨로 올라갈수록 명확한 정치적 성향이 드러났다. 
+![노드깊이](../assets/images/project/filter_bubble/ideology_노드깊이.PNG)
 
 <br/>
 
@@ -91,7 +98,10 @@ dataset.
 * RNN1-(w2v): 초기 값 Word2Vec으로 설정하고, 문장 단위 라벨로만 학습한 RNN
 * RNN2-(w2v): 초기 값 Word2Vec으로 설정하고, 문장 단위, phrase 단위 라벨 모두로 학습한 RNN. phrase 단위의 경우, annotation 없는 경우 정확도가 낮을 수 있어, annotation 없을 때와 있을 때의 가중치를 다르게 주었다. 
 
-* RNN2-(w2v)의 성능이 가장 높게 나옴(10번 실험 평균)
+* RNN2-(w2v)의 성능이 가장 높게 나옴(10번 실험 평균)  
+
+![실험결과](../assets/images/project/filter_bubble/ideology_실험결과.PNG)
+
 
 <br/>
 
@@ -105,9 +115,11 @@ dataset.
 * W2V 사용은 성능을 높인다.
 
 ### 5.2 Qualitative Analysis
-* 학습된 n-gram을 살펴보면, *liberal*과 *conservative*에 잘 대응하는 것으로 보인다.
+* 학습된 n-gram을 살펴보면, *liberal*과 *conservative*에 잘 대응하는 것으로 보인다.  
+![질적연구1](../assets/images/project/filter_bubble/ideology_질적연구1.PNG)
 
-* RNN 모델은 하위노드에서 상위노드로 가면서 정치적 입장이 바뀌는 경우를 잘 포착하는 것으로 나타난다. (BoW에서 틀린 경우에도 RNN이 맞힘)
+* RNN 모델은 하위노드에서 상위노드로 가면서 정치적 입장이 바뀌는 경우를 잘 포착하는 것으로 나타난다. (BoW에서 틀린 경우에도 RNN이 맞힘)  
+![질적연구2](../assets/images/project/filter_bubble/ideology_질적연구2.PNG)
 
 <br/>
 

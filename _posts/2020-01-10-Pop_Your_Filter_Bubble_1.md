@@ -71,13 +71,14 @@ News recommendation is an important technique for personalized news service. Com
  * Microsoft News 로그 데이터에서 랜덤으로 1만명 유저를 샘플링(2019.10.12 부터 2019.11.22.까지 총 6주 동안 최소 5개의 클릭수 이상 있는 유저)
  * 5주차를 train set(이전 4주차까지의 클릭 기록), 6주차를 test set(이전 5주차까지의 클릭 기록), 5주차의 마지막 날을 validate set으로 사용
  * 유저 데이터: Impression ID, User ID, Time, History, Impressions  
-column | 설명
------------- | -------------
-Impression ID | 유저가 뉴스 페이지 접속 시 나오는 화면 ID
-User ID | 익명화된 유저 아이디
-Time | 접속 시간
-History | 유저가 이전에 클릭한 기사 아이디를 시간 순서대로 정렬 
-Impression | 유저가 뉴스 페이지 접속시 띄워지는 기사 아이디(nID)와, 유저의 클릭 여부(label)를 [(nID1, label1),(nID2, label2), ...] 형태로 기록 <br/> labe1=1인 경우 클릭한 것, label=0인 경우 클릭하지 않은 것  
+ 
+    column | 설명
+    ------------ | -------------
+    Impression ID | 유저가 뉴스 페이지 접속 시 나오는 화면 ID
+    User ID | 익명화된 유저 아이디
+    Time | 접속 시간
+    History | 유저가 이전에 클릭한 기사 아이디를 시간 순서대로 정렬 
+    Impression | 유저가 뉴스 페이지 접속시 띄워지는 기사 아이디(nID)와, 유저의 클릭 여부(label)를 [(nID1, label1),(nID2, label2), ...] 형태로 기록 <br/> labe1=1인 경우 클릭한 것, label=0인 경우 클릭하지 않은 것  
      
   * 뉴스 기사 데이터: News ID, Category, SubCategory, Title, Abstract, URL, Title Entities, Abstract Entities
     ![news_data](/assets/images/project/filter_bubble/mindset_news.PNG)  

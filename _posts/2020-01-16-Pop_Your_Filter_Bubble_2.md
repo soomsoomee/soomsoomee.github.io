@@ -5,6 +5,7 @@ date: 2020-01-10
 tag: 
 - filter bubble
 - recommendation system
+- text classification
 image: ../assets/images/project/filter_bubble/filterbubble.png
 headerImage: true
 projects: true

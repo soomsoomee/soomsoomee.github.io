@@ -85,7 +85,7 @@ News recommendation is an important technique for personalized news service. Com
 ### 3.2 Dataset Analysis
 
 ![news data eda](/assets/images/project/filter_bubble/mindset_eda.PNG)  
-* Figure2(d)의 뉴스 기사 survival tima을 보면, 84.5% 이상의 뉴스 생존 기간이 2일 미만이다. 영향력이 빨리 사라지는 뉴스의 특성상, cold-start problem이 중요할 수 밖에 없다. 
+* Figure2(d)의 뉴스 기사 survival time을 보면, 84.5% 이상의 뉴스 생존 기간이 2일 미만이다. 영향력이 빨리 사라지는 뉴스의 특성상, cold-start problem이 중요할 수 밖에 없다. 
 
 <br/>
 

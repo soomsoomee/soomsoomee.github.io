@@ -122,18 +122,19 @@ News recommendation is an important technique for personalized news service. Com
 ### 5.3 News Content Understanding
  * 기본 실험에서 좋은 성능을 보인 모델(NAML, LSTUR) 등을 사용하여 다양한 요인을 바꾸어 실험 진행  
  
- #### 5.3.1 News Representation Model
+ 
+#### 5.3.1 News Representation Model
   * text representation 방법을 바꾸어 가며 실험  
   ![text representation](/assets/images/project/filter_bubble/mind_text_representation.PNG)  
   * TF-IDF, LDA보다 neural network 계열의 CNN, LSTM, Attention이 좋은 성능을 나타냄. 추천 태스크를 위한 특징 추출이 가능하기 때문이라고 보임.
   * CNN보다는 문장의 전체적인 맥락을 파악할 수 있는 LSTM, Attention이 좋은 성능을 보임.
   * Attention은 CNN, LSTM의 성능을 높여줌.   
   
- #### 5.3.2 Pre-trained Language Models
+#### 5.3.2 Pre-trained Language Models
  * 기존 word-embedding을 BERT로 바꾸어 실험한 결과, 성능 향상.  
  ![text representation](/assets/images/project/filter_bubble/mind_bert.PNG)  
   
- #### 5.3.3 Different News Information
+#### 5.3.3 Different News Information
    * title 외에 뉴스 기사의 다양한 텍스트 정보를 반영해가며 실험  
    ![other text](/assets/images/project/filter_bubble/mind_other_text.PNG)  
    * 기사 body가 title, abstract보다 높은 성능을 나타냄.

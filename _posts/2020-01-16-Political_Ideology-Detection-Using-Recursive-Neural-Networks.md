@@ -77,7 +77,9 @@ dataset.
     * root 노드의 경우 응답자 라벨링으로 valid하게 통과된 것만 남기고, 라벨링 되지 않은 leaf 노드는 가장 가까운 root 노드의 라벨링을 따름(모든 노드가 라벨링 되도록 함)  
     ![라벨링](../assets/images/project/filter_bubble/ideology_라벨링.PNG)
     <figcaption class="caption">문장을 노드 단위로 쪼개서 라벨링 진행</figcaption>  
+    
     <br/>
+    
 * 라벨링 결과 하위 노드에서의 정치적 성향과 상위 레벨에서의 정치적 성향이 달라진 경우가 543건(전체 13,640건) 존재했다.
 * 하위 노드의 정치적 성향은 대부분 neutral이었고, 상위 레벨로 올라갈수록 명확한 정치적 성향이 드러났다. 
 ![노드깊이](../assets/images/project/filter_bubble/ideology_노드깊이.PNG)

@@ -118,10 +118,10 @@ dataset.
 
 ### 5.2 Qualitative Analysis
 * 학습된 n-gram을 살펴보면, *liberal*과 *conservative*에 잘 대응하는 것으로 보인다.  
-![질적연구1](../assets/images/project/filter_bubble/ideology_질적연구1.PNG)
+![질적연구1](../assets/images/project/filter_bubble/ideology_질적연구2.PNG)
 
 * RNN 모델은 하위노드에서 상위노드로 가면서 정치적 입장이 바뀌는 경우를 잘 포착하는 것으로 나타난다. (BoW에서 틀린 경우에도 RNN이 맞힘)  
-![질적연구2](../assets/images/project/filter_bubble/ideology_질적연구2.PNG)
+![질적연구2](../assets/images/project/filter_bubble/ideology_질적연구1.PNG)
 
 <br/>
 

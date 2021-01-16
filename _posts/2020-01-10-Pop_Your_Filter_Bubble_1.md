@@ -70,7 +70,7 @@ News recommendation is an important technique for personalized news service. Com
 
  * Microsoft News 로그 데이터에서 랜덤으로 1만명 유저를 샘플링(2019.10.12 부터 2019.11.22.까지 총 6주 동안 최소 5개의 클릭수 이상 있는 유저)
  * 5주차를 train set(이전 4주차까지의 클릭 기록), 6주차를 test set(이전 5주차까지의 클릭 기록), 5주차의 마지막 날을 validate set으로 사용
- * 유저 데이터: Impression ID, User ID, Time, History, Impressions
+ * 유저 데이터: Impression ID, User ID, Time, History, Impressions  
     column | 설명
     ------------ | -------------
     Impression ID | 유저가 뉴스 페이지 접속 시 나오는 화면 ID
@@ -120,18 +120,18 @@ News recommendation is an important technique for personalized news service. Com
  
  
 ### 5.3 News Content Understanding
- * 기본 실험에서 좋은 성능을 보인 모델(NAML, LSTUR) 등을 사용하여 다양한 요인을 바꾸어 실험 진행
+ * 기본 실험에서 좋은 성능을 보인 모델(NAML, LSTUR) 등을 사용하여 다양한 요인을 바꾸어 실험 진행  
  
  #### 5.3.1 News Representation Model
   * text representation 방법을 바꾸어 가며 실험  
   ![text representation](/assets/images/project/filter_bubble/mind_text_representation.PNG)  
   * TF-IDF, LDA보다 neural network 계열의 CNN, LSTM, Attention이 좋은 성능을 나타냄. 추천 태스크를 위한 특징 추출이 가능하기 때문이라고 보임.
   * CNN보다는 문장의 전체적인 맥락을 파악할 수 있는 LSTM, Attention이 좋은 성능을 보임.
-  * Attention은 CNN, LSTM의 성능을 높여줌. 
+  * Attention은 CNN, LSTM의 성능을 높여줌.   
   
  #### 5.3.2 Pre-trained Language Models
  * 기존 word-embedding을 BERT로 바꾸어 실험한 결과, 성능 향상.  
- ![text representation](/assets/images/project/filter_bubble/mind_bert.PNG)
+ ![text representation](/assets/images/project/filter_bubble/mind_bert.PNG)  
   
  #### 5.3.3 Different News Information
    * title 외에 뉴스 기사의 다양한 텍스트 정보를 반영해가며 실험  
@@ -139,7 +139,7 @@ News recommendation is an important technique for personalized news service. Com
    * 기사 body가 title, abstract보다 높은 성능을 나타냄.
    * title, abstract, title과 같이 여러 수준의 정보를 같이 사용할 때 성능이 상승함.
    * 카테고리와 엔티티를 함께 사용할 경우 성능이 상승함. 특히 카테고리의 경우, 뉴스 분야에 따라 텍스트 특성이 달라질 수 있어서 유용한 것으로 보임.
-   * concat 보다는 attentive multi-view 적용한 경우 전반적으로 성능이 높음. 
+   * concat 보다는 attentive multi-view 적용한 경우 전반적으로 성능이 높음.   
    
 ### 5.4 User Interest Modeling
  * 유저 클릭 정보에서 피처를 추출하는 다양한 방식 실험  

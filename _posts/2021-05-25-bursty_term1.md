@@ -15,7 +15,7 @@ description: "Detecting bursty terms in computer science research 논문 리뷰"
 <br/>
 
 ['Emerging Issue Detection'](https://soomsoomee.github.io/emerging_issue/) 프로젝트를 진행하면서, 이머징 이슈를 측정하는 방식으로 'term burstiness'를 공부해보기로 했다.
-  term burstiness를 다룬 논문은 여럿 있는데, 그 중에서도 [이 연구](https://link.springer.com/article/10.1007/s11192-019-03307-5)가 향후 bursty해질 term을 '예측'한다는 관점에서 설명이 가장 잘 되어있는 것 같다.
+  term burstiness를 다룬 논문은 여럿 있는데, 그 중에서도 [이 연구](https://link.springer.com/article/10.1007/s11192-019-03307-5)가 향후 bursty해질 term을 '예측'한다는 관점에서 설명이 가장 잘 되어있는 것 같다. 이머징 이슈에서는 어떤 주제가 bursty해질 것인가에 대한 '예측'이 핵심이라고 생각한다.
 
 > **Abstract**  
 Research topics rise and fall in popularity over time, some more swiftly than others. The fastest rising topics are typically called bursts; for example “deep learning”, “internet of things” and “big data”. Being able to automatically detect and track bursty terms in the literature could give insight into how scientific thought evolves over time. In this paper, we take a trend detection algorithm from stock market analysis and apply it to over 30 years of computer science research abstracts, treating the prevalence of each term in the dataset like the price of a stock. Unlike previous work in this domain, we use the free text of abstracts and titles, resulting in a finer-grained analysis. We report a list of bursty terms, and then use historical data to build a classifier to predict whether they will rise or fall in popularity in the future, obtaining accuracy in the region of 80%. The proposed methodology can be applied to any time-ordered collection of text to yield past and present bursty terms and predict their probable fate.

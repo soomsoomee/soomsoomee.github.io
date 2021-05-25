@@ -1,7 +1,7 @@
 ---
 title: "[논문 리뷰] Political Ideology Detection Using Recursive Neural Networks"
 layout: post
-date: 2020-01-16
+date: 2021-01-16
 image: ../assets/images/markdown.jpg
 headerImage: false
 tag:

@@ -13,7 +13,7 @@ description: Political Ideology Detection Using Recursive Neural Networks 논문
 ---
 
 
-'Pop Your Filter Bubble' 프로젝트를 진행하면서 [Political Ideology Detection Using Recursive Neural Networks](https://www.aclweb.org/anthology/P14-1105/) 논문을 리뷰하게 되었다. 
+['Pop Your Filter Bubble'](https://soomsoomee.github.io/Pop_Your_Filter_Bubble/) 프로젝트를 진행하면서 [Political Ideology Detection Using Recursive Neural Networks](https://www.aclweb.org/anthology/P14-1105/) 논문을 리뷰하게 되었다. 
 
 > **Abstract**  
 An individual’s words often reveal their political

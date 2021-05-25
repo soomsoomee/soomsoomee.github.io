@@ -5,7 +5,7 @@ date: 2021-05-25
 tag: 
 - Emerging Issue
 - NLP
-image: ../assets/images/project/filter_bubble/filterbubble.png
+image: ../assets/images/emerging_issue/title.jpg
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination

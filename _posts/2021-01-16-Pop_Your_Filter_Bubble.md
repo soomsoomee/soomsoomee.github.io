@@ -22,3 +22,5 @@ externalLink: false
 
 <br/><br/>
 
+<p align="center"><img src="/assets/images/project/filter_bubble/filter_bubble_final/필터버블터뜨리기_결과보고서_페이지_01.png"></p>
+<p align="center"><img src="/assets/images/project/filter_bubble/filter_bubble_final/필터버블터뜨리기_결과보고서_페이지_02.png"></p>

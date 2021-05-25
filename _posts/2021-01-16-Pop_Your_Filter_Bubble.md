@@ -22,12 +22,3 @@ externalLink: false
 
 <br/><br/>
 
-이상적인 이야기지만, 내가 읽고 있는 기사와 다른 논조의 기사를 스펙트럼처럼 보여줄 수 있으면 좋겠다는 생각이 들었다.
-예를 들어 '우리나라 대기업의 상속세를 낮춰야 한다'는 논조의 기사를 읽고 있을때, 
-비슷한 논조를 가진 기사부터 '우리나라 상속세는 높지 않은 편이다'라는 논조의 기사까지 입장의 정도에 따라 순서대로 보여주는 것이다.  
-
-같은 주제를 다루면서 나와 생각이 다른 기사를 추천 해주되, 내 생각과 얼마나 다른지를 알 수 있으면 거부감도 적고, 해당 토픽을 넓은 관점에서 볼 수 있을 것이라 생각했다. 
-물론 '주장의 정도'는 사람이 판단하기에도 어려운 일이다. 하지만 text classification을 응용할 수 있을까 하여 
-[Political Ideology Detection Using Recursive Neural Networks에 대한 논문 리뷰](https://soomsoomee.github.io/Political_Ideology-Detection-Using-Recursive-Neural-Networks/)도 하고,
-논문 저자인 Mohit Lyyer 교수님께서 제공해주신 데이터셋을 활용하여 직접 분류 모델을 구축해보았다. 
-다른 분야에 비해 '진보'와 '보수'라는 논조로 비교적 쉽게 분류될 수 있는 정치 기사에 한정해서라도, 논조의 '정도'를 파악해보고자 하는 욕심이 있다. 

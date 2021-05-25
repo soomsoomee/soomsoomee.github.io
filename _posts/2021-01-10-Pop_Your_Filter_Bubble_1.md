@@ -1,7 +1,7 @@
 ---
 title: "[Pop Your Filter Bubble] 1. MIND(A Large-scale Dataset for news recommendation) 살펴보기"
 layout: post
-date: 2020-01-10 
+date: 2021-01-10 
 tag: 
 - filter bubble
 - recommendation system

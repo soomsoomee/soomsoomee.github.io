@@ -1,7 +1,7 @@
 ---
 title: "[Pop Your Filter Bubble] 2. 정치기사 Text Classification을 활용하여 논조의 스펙트럼을 파악할 수 있을까?"
 layout: post
-date: 2020-01-16 
+date: 2021-01-16 
 tag: 
 - filter bubble
 - recommendation system

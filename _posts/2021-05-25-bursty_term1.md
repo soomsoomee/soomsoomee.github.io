@@ -51,9 +51,9 @@ Research topics rise and fall in popularity over time, some more swiftly than ot
 
 ### 2.2. MACD
 
- * Moving Average는 수렴(Convergence)하고 발산(Divergence)하는 특징이 있다. 예를 들어, 1년 기준 장기 이동평균과, 1주일 기준 단기 이동평균이 있을 때, 1주일 이동평균선이 1년 이동평균선에서 멀어지는 경우, 지난 1주일의 추세가 1년의 추세와 다르게 나타나는 발산이 나타난다. 반대로, 1주일 이동평균선이 1년 이동평균선과 가까워지는 경우 지난 1주일의 추세는 1년의 추세와 유사하게 수렴한다고 할 수 있다. 이러한 **M**ovinh **A**verage의 **C**onvergence와 **D**ivergence를 분석하기 위한 방법이 MACD이다.
+ * Moving Average는 수렴(Convergence)하고 발산(Divergence)하는 특징이 있다. 예를 들어, 1년 기준 장기 이동평균과, 1주일 기준 단기 이동평균이 있을 때, 1주일 이동평균선이 1년 이동평균선에서 멀어지는 경우, 지난 1주일의 추세가 1년의 추세와 다르게 나타나는 발산이 나타난다. 반대로, 1주일 이동평균선이 1년 이동평균선과 가까워지는 경우 지난 1주일의 추세는 1년의 추세와 유사하게 수렴한다고 할 수 있다. 이러한 **M**oving **A**verage의 **C**onvergence와 **D**ivergence를 분석하기 위한 방법이 MACD이다.
 
-* MACD에는 
+* MACD는 (1) MACD선, (2) Signal선, (3) MACD선과 Signal 사이의 차이를 나타내는 히스토그램 세 가지 요소로 구성된다.([참고](https://academy.binance.com/ko/articles/macd-indicator-explained)
  
 <br/>
 

@@ -42,23 +42,18 @@ Research topics rise and fall in popularity over time, some more swiftly than ot
 ## Ⅱ.  Moving Average Convergence Divergence(MACD)
 
 ### 2.1. EMA(Exponential Moving Average)
-
   
-
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/lAq96T8FkTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/NxTFlzBjS-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- 
- * 뉴스 기사 추천의 두 가지 포인트: 뉴스 기사의 텍스트적 성질 반영 + 유저의 행동 패턴 반영  
- * 과거에는 주로 뉴스의 카테고리 URL, 사용자의 인구적 특성, 지리적 특성을 반영하여 feature engineering  
- * 최근에는 다양한 deep learning 기법을 통해 뉴스 기사와 사용자의 특성을 학습. 그러나 대부분 공개적으로 사용하기 어려운 데이터셋을 사용.    
- * 예1) : 디노이징 오토인코더(denoising autoencoder) 통해 뉴스 기사 특성 학습, GRU 통해 유저의 클릭 패턴 학습 ([Okura et al., 2017](http://library.usc.edu.ph/ACM/KKD%202017/pdfs/p1933.pdf))    
- * 예2) 지식그래프를 활용한 CNN으로 뉴스 기사 임베딩 ([Wang et al., 2018](https://arxiv.org/abs/1801.08284))  
- * 예3) 기사를 제목, 분류, 본문 다양한 수준에서 활용하고, 유저의 클릭활동에 attention 적용하여 중요한 특성을 반영([Wu et al., 2019](https://arxiv.org/abs/1907.05576))
+  SME(Simple Moving Average)가 시계열적 데이터의 노이즈를 줄이기 위해, 과거 값들을 동일한 가중치로 평균하는 것이라면, EMA는 최신 값에 가중치를 두어 과거값들을 평균한다.
+  즉, 최신의 정보를 더 많이 반영하는 것이다. EMA에 대한 자세한 내용은 아래 동영상에 잘 설명되어 있다. 
+  <p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/lAq96T8FkTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+  <p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/NxTFlzBjS-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 
-### 2.2. Existing Datasets
+### 2.2. MACD
 
- * *Plista* dataset, *Adressa* dataset, Globo.com dataset, Yahoo! dataset 등이 있으나 대부분 영어가 아니거나, 텍스트 정보가 적거나, 유저수가 적다.  
+ * Moving Average는 수렴(Convergence)하고 발산(Divergence)하는 특징이 있다. 예를 들어, 1년 기준 장기 이동평균과, 1주일 기준 단기 이동평균이 있을 때, 1주일 이동평균선이 1년 이동평균선에서 멀어지는 경우, 지난 1주일의 추세가 1년의 추세와 다르게 나타나는 발산이 나타난다. 반대로, 1주일 이동평균선이 1년 이동평균선과 가까워지는 경우 지난 1주일의 추세는 1년의 추세와 유사하게 수렴한다고 할 수 있다. 이러한 **M**ovinh **A**verage의 **C**onvergence와 **D**ivergence를 분석하기 위한 방법이 MACD이다.
+
+* MACD에는 
  
 <br/>
 
@@ -123,7 +118,8 @@ Research topics rise and fall in popularity over time, some more swiftly than ot
 #### 5.3.1 News Representation Model
   * text representation 방법을 바꾸어 가며 실험  
   ![text representation](/assets/images/project/filter_bubble/mind_text_representation.PNG)  
-  * TF-IDF, LDA보다 neural network 계열의 CNN, LSTM, Attention이 좋은 성능을 나타냄. 추천 태스크를 위한 특징 추출이 가능하기 때문이라고 보임.
+  * TF-IDF, LDA보다 neural network 계열의 CNN, LS
+  * TM, Attention이 좋은 성능을 나타냄. 추천 태스크를 위한 특징 추출이 가능하기 때문이라고 보임.
   * CNN보다는 문장의 전체적인 맥락을 파악할 수 있는 LSTM, Attention이 좋은 성능을 보임.
   * Attention은 CNN, LSTM의 성능을 높여줌.   
   

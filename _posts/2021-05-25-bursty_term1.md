@@ -22,23 +22,24 @@ Research topics rise and fall in popularity over time, some more swiftly than ot
 
 <br/>
 
-## Ⅰ. Introduction  
+## Ⅰ. Burst Detection 선행연구
 
-### 1.1 뉴스(news) 추천의 특징  
+### 1.1 LDA 계열: 토픽(term의 집합)의 시작점(first mention)을 찾고, 변화 양상을 살펴보는 모델
 
- * 뉴스 기사는 업데이트 속도가 매우 빠르다. cold-start problem이 특히 문제될 수 있음  
- * 뉴스 기사는 텍스트적 정보(제목, 본문)을 풍부하게 포함한다. 기본적인 CF(Collaborative Filtering)처럼 유저, 아이템을 단순히 아이디로 포함하는 것보다 다양한 정보를 포함할 필요가 있다.
- * 주로 명시적인 평점이 없고 클릭과 같은 암묵적인(implicit) 정보를 통해 유저의 선호가 표현된다. 
+  * 말뭉치를 시간에 따라 조각으로 나누고, 각 조각에 LDA를 적용해 토픽을 도출. 그 다음 기간 별로 유사도 계산을 통해 토픽을 연결하고, 토픽의 시계열적 변화를 관찰.
+  * 토픽의 시간에 따른 변화를 보면서, bursty해지는 구간도 발견 가능.
+  * 한계: interpretability 낮음. 일관성 있게 기간별 토픽을 연결하는 것이 어려움.
 
+### 1.2 Kleinberg 계열: busrty terms를 먼저 찾고, 이들을 그룹지어 토픽을 도출하는 모델
+
+  * Kleinberg(2002)의 burst detection algorithm은 문서의 단어들이 non-bursty state와 busrty state를 반복한다고 가정. 이 알고리즘을 트위터, 뉴스 등에 적용한 다양한 후속 연구 존재.
+  * 그러나, scientific litereature의 경우 Klenberg의 가정과는 달리 문서가 연속적으로 생성되지 않고 'batch'로 생성됨.(예: 저널 발간 주기) 트위터나 뉴스처럼 초 단위가 아니라, 일, 월, 년 등 더 긴 단위의 time step을 사용할 필요가 있음. 
+  * 또한, scientific literature의 경우 기간에 따라 corpus의 특성과 내용이 매우 달라지는 특성을 가짐.
     
-### 1.2. MIND 데이터  
- 
- * Microsoft News의 기사와 유저 로그를 포함한 데이터
- * 100만 유저의 클릭 행동과 160,000개의 기사를 포함
 
 <br/>
 
-## Ⅱ.  Related Work    
+## Ⅱ.  Moving Average convergence divergence
 
 ### 2.1. News Recommendation  
  

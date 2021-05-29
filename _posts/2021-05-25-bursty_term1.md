@@ -24,7 +24,7 @@ Research topics rise and fall in popularity over time, some more swiftly than ot
 
 ## Ⅰ. Burst Detection 선행연구
 
-### 1.1 LDA 계열: 토픽(term의 집합)의 시작점(first mention)을 찾고, 변화 양상을 살펴보는 모델
+### 1.1 LDA 계열: 토픽(term의 집합)의 시작점을 찾고, 변화 양상을 살펴보는 모델
 
   * 말뭉치를 시간에 따라 조각으로 나누고, 각 조각에 LDA를 적용해 토픽을 도출. 그 다음 기간 별로 유사도 계산을 통해 토픽을 연결하고, 토픽의 시계열적 변화를 관찰.
   * 토픽의 시간에 따른 변화를 보면서, bursty해지는 구간도 발견 가능.
@@ -39,9 +39,12 @@ Research topics rise and fall in popularity over time, some more swiftly than ot
 
 <br/>
 
-## Ⅱ.  Moving Average convergence divergence
+## Ⅱ.  Moving Average Convergence Divergence(MACD)
 
-### 2.1. News Recommendation  
+### 2.1. EMA(Exponential Moving Average)
+
+<iframe width="560" height="310" src="https://youtu.be/lAq96T8FkTw" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="310" src="https://youtu.be/NxTFlzBjS-4" frameborder="0" allowfullscreen></iframe>
  
  * 뉴스 기사 추천의 두 가지 포인트: 뉴스 기사의 텍스트적 성질 반영 + 유저의 행동 패턴 반영  
  * 과거에는 주로 뉴스의 카테고리 URL, 사용자의 인구적 특성, 지리적 특성을 반영하여 feature engineering  

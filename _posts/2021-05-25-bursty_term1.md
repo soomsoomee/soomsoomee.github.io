@@ -62,98 +62,18 @@ Research topics rise and fall in popularity over time, some more swiftly than ot
   3. 히스토그램: MACD - Signal. MACD와 Signal의 교차점은, MACD의 단기 EMA와 장기 EMA 교차점보다 빠르게 나타나는 특성이 있음.
   
   * 관련 선행연구인 He and Parker(2010)은 MACD를 사용하여, PubMed에서 나타나는 MeSH(Medical Subject headings) terms의 발생 빈도를 계산함. 그러나 이 연구에서는 vocabulary를 한정시키지 않고 문서 전체에 등장하는 단어에 대해 MACD를 적용.
- 
-<br/>
 
-##  III.  Materials and Methods
+<p align="center"><img src="/assets/images/emerging_issue/bursty_metric.PNG"></p>
 
-### 3.1. Dataset 
+  * Burstiness 수식의 의미: 분자는 MACD-Signal의 값인 historam을 의미. 즉, MACD가 Signal보다 얼마나 큰지(=단기 추세가 장기 추세보다 얼마나 상승세인지)를 의미. 분모는 단어별로 histogram의 폭이 다양하기 때문에 정규화 시킨 것. 분모 값으로 평균, 중앙값, 최댓값 등을 실험하였으나, 최댓값에 루트를 취했을 때 가장 안정적인 값을 보여서 채택.
 
- * DBLP에서 1988-2017까지 Computer Science 주제의 260만개 article에 대한 제목과 abstract 사용.
- * 총 410만개 단어 중, 3년 연속 전체 문서의 0.02% 미만으로 등장한 단어를 제외하고 분석. 총 약 7만개의 단어 사용.
-    
-### 3.2 Normalisation
+### 2.3 Predicting the future prevalence of terms using MACD features
 
-  * 최근으로 올 수록, 문서수가 많아지고, 제목이 길어지는 등 시계열적으로 corpus의 불균형이 존재하여 정규화 진행.
-  * 연도별 단어 등장 횟수를 해당 연도의 문서 수와, 해당 연도의 문서 별 토큰수로 나누어 정규화.
+  * burstiness metric을 바탕으로, bursty term을 정의하고 busrty term을 예측하는 실험을 진행. 다음의 5 단계로 이루어짐.
   
-### 3.3 Applying MACD
-
-  * 총 31개의 timesteps에 대하여, (6, 12, 3) years의 하이퍼 파라미터 설정. 즉, 단기 EMA로 6년, 장기 EMA로 12년, MACD의 EMA로 3년 적용.
-  * 위 하이퍼파라미터 하에서, 단어별 등장횟수의 MACD 히스토그램을 활용한 term burstiness는 아래와 같이 정의.
-  
-<br/>
-
-## IV. Method
-* 다양한 추천 알고리즘을 MIND에 적용하여 실험
-
-### 4.1 General Recommendation Methods
- * LibFM(Rendle, 2012), DSSM(Huang et al., 2013), Wide&Deep(Cheng et al., 2016), DeepFM (Guo et al., 2017)
-
-### 4.2 News Recommendation Methods
- * DFM (Lian et al., 2018), GRU (Okura et al., 2017), DKN (Wang et al., 2018), NPA (Wu et al., 2019b), NAML (Wu et al., 2019a), LSTUR (An et al., 2019), NRMS (Wu et al., 2019c)
-
-<br/>
-
-## V. Experiments
-
-### 5.1 Experiments Settings
-
- * 뉴스 기사의 제목만 텍스트 정보로 포함
- * test set의 절반의 유저는 train set에 있는 유저 중 랜덤 샘플링
- * word embedding이 필요한 알고리즘의 경우 Glove를 우선적으로 사용
- * optimizer로 Adam 사용
- * 클릭 되지 않은 뉴스가 훨씬 많기에 negative sampling 사용
- * 각 실험마다 10번씩 반복
-
-### 5.2 Performance Comparison
- ![performance comparison](/assets/images/project/filter_bubble/mind 실험 결과.PNG)   
- * 전반적으로 news-specific recommendation system의 성능이 높게 나타남. news-specific recommendation system은 유저와 뉴스 기사의 특징을 (피처 엔지니어링 하지 않고) end-to-end로 학습하기 때문인 것으로 보임.
- * news-specific recommendation system 중에서는 NRMS, LSTUR이 높은 성능을 보임.
- * AUC의 경우 unseen users에서 overlap users보다 성능이 낮게 나타자지만, 다른 메트릭에서는 큰 차이가 나타나지 않음. test set에 유저가 존재하지 않더라도, 유저의 클릭 특성이 잘 학습되면 준수한 성능을 보일 수 있을 것이라고 예상됨. 
+  1. 예측 시점 이전의 20년치 term frequency 데이터를 가져온다.
+  2. 20년치 데이터에 burstiness metric을 적용하여, burstiness threshold를 넘는 후보 단어들을 고른다.
+  3. 후보 단어들의 MACD, 히스토그램 등 각종 통계값을 활용하여 feature를 생성한다.
+  4. 예측시점부터 I(interval) 사이에 예측시점보다 burstiness가 높아지는지, 적어지는지를 label로 삼는다.
+  5. feature(term frequency의 시계열적 특성)를 통해 label(현재 기준으로 bursty해지는지 아닌지)을 예측하는 모델을 만든다.
  
- 
-### 5.3 News Content Understanding
- * 기본 실험에서 좋은 성능을 보인 모델(NAML, LSTUR) 등을 사용하여 다양한 요인을 바꾸어 실험 진행  
- 
- 
-#### 5.3.1 News Representation Model
-  * text representation 방법을 바꾸어 가며 실험  
-  ![text representation](/assets/images/project/filter_bubble/mind_text_representation.PNG)  
-  * TF-IDF, LDA보다 neural network 계열의 CNN, LS
-  * TM, Attention이 좋은 성능을 나타냄. 추천 태스크를 위한 특징 추출이 가능하기 때문이라고 보임.
-  * CNN보다는 문장의 전체적인 맥락을 파악할 수 있는 LSTM, Attention이 좋은 성능을 보임.
-  * Attention은 CNN, LSTM의 성능을 높여줌.   
-  
-#### 5.3.2 Pre-trained Language Models
- * 기존 word-embedding을 BERT로 바꾸어 실험한 결과, 성능 향상.  
- ![text representation](/assets/images/project/filter_bubble/mind_bert.PNG)  
-  
-#### 5.3.3 Different News Information
-   * title 외에 뉴스 기사의 다양한 텍스트 정보를 반영해가며 실험  
-   ![other text](/assets/images/project/filter_bubble/mind_other_text.PNG)  
-   * 기사 body가 title, abstract보다 높은 성능을 나타냄.
-   * title, abstract, title과 같이 여러 수준의 정보를 같이 사용할 때 성능이 상승함.
-   * 카테고리와 엔티티를 함께 사용할 경우 성능이 상승함. 특히 카테고리의 경우, 뉴스 분야에 따라 텍스트 특성이 달라질 수 있어서 유용한 것으로 보임.
-   * concat 보다는 attentive multi-view 적용한 경우 전반적으로 성능이 높음.   
-   
-### 5.4 User Interest Modeling
- * 유저 클릭 정보에서 피처를 추출하는 다양한 방식 실험  
- ![other text](/assets/images/project/filter_bubble/mind_user_representaion.PNG) 
- * 유저 클릭 로그 반영 길이가 길어질수록 성능 향상  
- ![log length](/assets/images/project/filter_bubble/mind_log_length.PNG)
- 
-<br/>
-
-##  VI. Conclusion and Discussion
- * 이미지, 비디오, 다른 언어로 된 뉴스 기사와 관련한 추천 연구로 확장
- * 클릭 로그 외에도 다양한 참여방식(읽었는지 여부, 댓글 등) 반영 가능성
- 
- ---
- 
- <br/>
- 
-## 느낀점
- * 뉴스 기사는 수명이 짧기 때문에 cold-start-prolbem을 보완하기 위한 텍스트 정보 반영이 중요한 것 같다.
- * 카테고리를 반영했을 때 성능이 올라간 것이 흥미롭다. 확실히 분야에 따라 각 단어가 가지는 맥락도 달라질 것이다.
- * BERT가 다른 임베딩 보다 높은 성능을 보였다. 역시 BERT를 써야 하나?? 대규모 데이터를 미리 학습한게 많은 도움이 되나보다. 

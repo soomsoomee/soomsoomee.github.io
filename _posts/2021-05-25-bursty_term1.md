@@ -43,8 +43,10 @@ Research topics rise and fall in popularity over time, some more swiftly than ot
 
 ### 2.1. EMA(Exponential Moving Average)
 
-<iframe width="560" height="310" src="https://youtu.be/lAq96T8FkTw" frameborder="0" allowfullscreen></iframe>
-<iframe width="560" height="310" src="https://youtu.be/NxTFlzBjS-4" frameborder="0" allowfullscreen></iframe>
+  
+
+  <iframe width="560" height="310" src="https://youtu.be/lAq96T8FkTw" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="310" src="https://youtu.be/NxTFlzBjS-4" frameborder="0" allowfullscreen></iframe>
  
  * 뉴스 기사 추천의 두 가지 포인트: 뉴스 기사의 텍스트적 성질 반영 + 유저의 행동 패턴 반영  
  * 과거에는 주로 뉴스의 카테고리 URL, 사용자의 인구적 특성, 지리적 특성을 반영하여 feature engineering  

@@ -53,33 +53,35 @@ Research topics rise and fall in popularity over time, some more swiftly than ot
 
  * Moving Average는 수렴(Convergence)하고 발산(Divergence)하는 특징이 있다. 예를 들어, 1년 기준 장기 이동평균과, 1주일 기준 단기 이동평균이 있을 때, 1주일 이동평균선이 1년 이동평균선에서 멀어지는 경우, 지난 1주일의 추세가 1년의 추세와 다르게 나타나는 발산이 나타난다. 반대로, 1주일 이동평균선이 1년 이동평균선과 가까워지는 경우 지난 1주일의 추세는 1년의 추세와 유사하게 수렴한다고 할 수 있다. 이러한 **M**oving **A**verage의 **C**onvergence와 **D**ivergence를 분석하기 위한 방법이 MACD이다.
 
-* MACD는 (1) MACD선, (2) Signal선, (3) MACD선과 Signal 사이의 차이를 나타내는 히스토그램 세 가지 요소로 구성된다.([참고](https://academy.binance.com/ko/articles/macd-indicator-explained)
+* MACD는 **(1) MACD선**, **(2) Signal선**, **(3) MACD선과 Signal 사이의 차이를 나타내는 히스토그램** 세 가지 요소로 구성된다.([참고](https://academy.binance.com/ko/articles/macd-indicator-explained))
+
+<p align="center"><img src="/assets/images/emerging_issue/macd.PNG"></p>
+
+  1. MACD: 단기 EMA - 장기 EMA. 단기 추세와 장기 추세 사이의 차이를 나타냄. MACD > 0 이면 단기적으로 장기 추세에 비해 상승세에 있는 것이고, MACD < 0 이면 단기적으로 장기 추세에 비해 하락세에 있는 것.
+  2. Signal: MACD에 다시 EMA를 취한 것. 단기 추세와 장기 추세의 차이의 이동평균. 
+  3. 히스토그램: MACD - Signal. MACD와 Signal의 교차점은, MACD의 단기 EMA와 장기 EMA 교차점보다 빠르게 나타나는 특성이 있음.
+  
+  * 관련 선행연구인 He and Parker(2010)은 MACD를 사용하여, PubMed에서 나타나는 MeSH(Medical Subject headings) terms의 발생 빈도를 계산함. 그러나 이 연구에서는 vocabulary를 한정시키지 않고 문서 전체에 등장하는 단어에 대해 MACD를 적용.
  
 <br/>
 
-##  III.  MIND Dataset
+##  III.  Materials and Methods
 
-### 3.1. Dataset Construction
+### 3.1. Dataset 
 
- * Microsoft News 로그 데이터에서 랜덤으로 1만명 유저를 샘플링(2019.10.12 부터 2019.11.22.까지 총 6주 동안 최소 5개의 클릭수 이상 있는 유저)
- * 5주차를 train set(이전 4주차까지의 클릭 기록), 6주차를 test set(이전 5주차까지의 클릭 기록), 5주차의 마지막 날을 validate set으로 사용
- * 유저 데이터: Impression ID, User ID, Time, History, Impressions  
-    * Impression ID:  유저가 뉴스 페이지 접속 시 나오는 화면 ID 
-    * User ID:  익명화된 유저 아이디 
-    * Time: 접속 시간 
-    * History: 유저가 이전에 클릭한 기사 아이디를 시간 순서대로 정렬  
-    * Impression: 유저가 뉴스 페이지 접속시 띄워지는 기사 아이디(nID)와, 유저의 클릭 여부(label)를 [(nID1, label1),(nID2, label2), ...] 형태로 기록 (labe1=1인 경우 클릭한 것, label=0인 경우 클릭하지 않은 것)    
-     
-     
-  * 뉴스 기사 데이터: News ID, Category, SubCategory, Title, Abstract, URL, Title Entities, Abstract Entities
-    ![news_data](/assets/images/project/filter_bubble/mindset_news.PNG)  
-    * WikiData의 엔티티를 사용하여 title과 abstract에서 엔티티 추출
+ * DBLP에서 1988-2017까지 Computer Science 주제의 260만개 article에 대한 제목과 abstract 사용.
+ * 총 410만개 단어 중, 3년 연속 전체 문서의 0.02% 미만으로 등장한 단어를 제외하고 분석. 총 약 7만개의 단어 사용.
     
-### 3.2 Dataset Analysis
+### 3.2 Normalisation
 
-![news data eda](/assets/images/project/filter_bubble/mindset_eda.PNG)  
-* Figure2(d)의 뉴스 기사 survival time을 보면, 84.5% 이상의 뉴스 생존 기간이 2일 미만이다. 영향력이 빨리 사라지는 뉴스의 특성상, cold-start problem이 중요할 수 밖에 없다. 
+  * 최근으로 올 수록, 문서수가 많아지고, 제목이 길어지는 등 시계열적으로 corpus의 불균형이 존재하여 정규화 진행.
+  * 연도별 단어 등장 횟수를 해당 연도의 문서 수와, 해당 연도의 문서 별 토큰수로 나누어 정규화.
+  
+### 3.3 Applying MACD
 
+  * 총 31개의 timesteps에 대하여, (6, 12, 3) years의 하이퍼 파라미터 설정. 즉, 단기 EMA로 6년, 장기 EMA로 12년, MACD의 EMA로 3년 적용.
+  * 위 하이퍼파라미터 하에서, 단어별 등장횟수의 MACD 히스토그램을 활용한 term burstiness는 아래와 같이 정의.
+  
 <br/>
 
 ## IV. Method
